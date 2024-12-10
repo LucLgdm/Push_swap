@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:48:42 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/10 13:04:46 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:15:41 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,17 @@ void	ft_clearnode_a(t_stack_a **head_a)
 		*head_a = tmp->next;
 		free(tmp);
 	}
+}
+
+int			ft_lstsize_a(t_stack_a *head_a)
+{
+	int			i;
+	
+	i = 0;
+	while (head_a != NULL)
+	{
+		i++;
+		head_a = head_a->next;
+	}
+	return (i);
 }

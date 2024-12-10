@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/10 13:13:39 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/10 14:38:08 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,20 @@ void		doppel_check(t_stack_a *head_a);
 t_stack_a	*create_stack_a(int argc, char **argv);
 t_stack_a	*ft_newnode_a(int content);
 void		ft_clearnode_a(t_stack_a **head_a);
+int			ft_lstsize_a(t_stack_a *head_a);
 
 // Linked list b
 void		ft_clearnode_b(t_stack_b **head_b);
 
 // Sort
 void		sort(t_stacks *stacks);
+bool		is_sorted(t_stacks *stacks);
+void		sort_two(t_stacks *stacks);
+
+// Commande swap
+void	ft_swap(t_stacks *stacks, char c);
+void	swap_a(t_stack_a *head_a, int n);
+void	swap_b(t_stack_b *head_b, int n);
 
 // Print
 void		print_error_and_exit(void);
