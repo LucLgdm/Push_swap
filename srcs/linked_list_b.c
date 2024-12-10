@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   linked_list_b.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 10:19:07 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/10 13:12:43 by lde-merc         ###   ########.fr       */
+/*   Created: 2024/12/10 13:10:34 by lde-merc          #+#    #+#             */
+/*   Updated: 2024/12/10 13:11:26 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_clearnode_b(t_stack_b **head_b)
 {
-	t_stacks	stacks;
+	t_stack_b	*tmp;
 
-	error_input(argc, argv);
-	stacks.head_a = create_stack_a(argc, argv);
-	stacks.head_b = NULL;
-	doppel_check(stacks.head_a);
-    sort(&stacks);
-    free_all(&stacks);
+	while (*head_b != NULL)
+	{
+		tmp = *head_b;
+		*head_b = tmp->next;
+		free(tmp);
+	}
 }

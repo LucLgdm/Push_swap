@@ -6,18 +6,11 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:41:48 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/10 11:44:37 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/10 12:37:26 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-
-int	ft_isspace(char c)
-{
-	if ((c >= 9 && c <= 13) || c == 32)
-		return (1);
-	return (0);
-}
 
 long	ft_atol(const char *nptr)
 {
