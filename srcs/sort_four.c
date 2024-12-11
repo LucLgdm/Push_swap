@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 14:00:44 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/11 14:49:00 by lde-merc         ###   ########.fr       */
+/*   Created: 2024/12/11 11:08:23 by lde-merc          #+#    #+#             */
+/*   Updated: 2024/12/11 15:01:42 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort(t_stacks *stacks)
+void	sort_four(t_stacks *stacks)
 {
-	int	size_a;
+	t_moves		*moves;
+	t_cheap		*cheap;
+	t_values	*values;
 
-	size_a = ft_lstsize_a(stacks->head_a);
-	if (is_sorted(stacks))
-		return ;
-	if (size_a == 2)
-		sort_two(stacks);
-	if (size_a == 3)
-		sort_three(stacks, 1);
-	if (size_a == 4)
-		sort_four(stacks);
+	moves = calloc(1, sizeof(t_moves));
+	stacks->moves = moves;
+	cheap = ft_calloc(1, sizeof(t_cheap));
+	stacks->cheap = cheap;
+	values = calloc(1, sizeof(values));
+	stacks->values = values;
+	ft_push(stacks, 'b');
+	sort_three(stacks, 0);
+    
+	free_all(stacks);
+	exit(EXIT_FAILURE);
 }
