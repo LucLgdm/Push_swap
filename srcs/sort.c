@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:00:44 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 14:41:40 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 14:55:57 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ void	sort(t_stacks *stacks)
 	size_a = ft_lstsize_a(stacks->head_a);
 	if (is_sorted(stacks))
 		return ;
-	else if (size_a == 2)
+	if (size_a == 2)
 		sort_two(stacks);
 	else if (size_a == 3)
 		sort_three(stacks, 1);
 	else if (size_a == 4)
 		sort_four(stacks);
-	else
-		sort_multi(stacks);
+	ft_push(stacks, 'b');
+	ft_push(stacks, 'b');
+	ft_find_cheapest(stacks);
+	sort_three(stacks, 0);
+	move_back_to_a(stacks);
 }

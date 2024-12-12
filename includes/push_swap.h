@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 14:42:01 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 15:04:43 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,6 @@ void		sort_two(t_stacks *stacks);
 void		sort_three(t_stacks *stacks, int flag);
 void		work_number_three(t_stacks *stacks, int num1, int num2, int num3);
 void		sort_four(t_stacks *stacks);
-void		sort_multi(t_stacks *stacks);
 
 // Commande swap
 void		ft_swap(t_stacks *stacks, char c);
@@ -147,6 +146,11 @@ void		ft_push_b(t_stacks *stacks);
 // Return of the Jedi
 void		put_in_good_way(t_stacks *stacks);
 void		apply_moves_a(t_stacks *stacks);
+
+// Cheap part
+void		ft_find_cheapest(t_stacks *stacks);
+void		find_moves(t_stacks *stacks);
+void		apply_cheap_moves(t_stacks *stacks);
 
 // Print
 void		print_error_and_exit(void);
