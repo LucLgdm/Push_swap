@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   sort_multi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 13:08:25 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 14:40:14 by lde-merc         ###   ########.fr       */
+/*   Created: 2024/12/12 14:42:30 by lde-merc          #+#    #+#             */
+/*   Updated: 2024/12/12 14:42:56 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	free_all(t_stacks *stacks)
+void    sort_multi(t_stacks *stacks)
 {
-	ft_clearnode_a(&stacks->head_a);
-	ft_clearnode_b(&stacks->head_b);
-	free(stacks->cheap);
-	free(stacks->moves);
-	free(stacks->values);
+    
 }

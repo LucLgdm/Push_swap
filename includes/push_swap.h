@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 11:13:50 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 14:42:01 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ t_stack_a	*ft_newnode_a(int content);
 void		ft_clearnode_a(t_stack_a **head_a);
 int			ft_lstsize_a(t_stack_a *head_a);
 void		new_content_a(t_stacks *stacks);
-void		apply_moves_new_a(t_stacks *stacks); /* TO DO !!!!!*/
+void		apply_moves_new_a(t_stacks *stacks);
 
 // Linked list b
 void		ft_clearnode_b(t_stack_b **head_b);
@@ -120,6 +120,7 @@ void		sort_two(t_stacks *stacks);
 void		sort_three(t_stacks *stacks, int flag);
 void		work_number_three(t_stacks *stacks, int num1, int num2, int num3);
 void		sort_four(t_stacks *stacks);
+void		sort_multi(t_stacks *stacks);
 
 // Commande swap
 void		ft_swap(t_stacks *stacks, char c);

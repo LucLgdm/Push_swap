@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:08:23 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 10:56:02 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 14:03:16 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	sort_four(t_stacks *stacks)
 	stacks->moves = moves;
 	cheap = ft_calloc(1, sizeof(t_cheap));
 	stacks->cheap = cheap;
-	values = calloc(1, sizeof(values));
+	values = calloc(1, sizeof(t_values));
 	stacks->values = values;
 	ft_push(stacks, 'b');
 	sort_three(stacks, 0);
-    move_back_to_a(stacks);
+	move_back_to_a(stacks);
 	free_all(stacks);
-	exit(EXIT_FAILURE);
+	exit(EXIT_SUCCESS);
 }
