@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:34:06 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/11 16:42:17 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 10:54:27 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,15 @@ void	new_max_a(t_stacks *stacks)
 void    apply_moves_min_a(t_stacks *stacks)
 {
     while(stacks->moves->ra != 0)
-        ft_rotate(stacks, 'a');
+    {
+		ft_rotate(stacks, 'a');
+		stacks->moves->ra--;
+	}
     while(stacks->moves->rra != 0)
-        ft_rotate(stacks, 'a');
+    {
+		ft_rev_rotate(stacks, 'a');
+		stacks->moves->rra--;
+	}
     ft_push(stacks, 'a');
 }
 

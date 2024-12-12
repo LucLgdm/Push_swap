@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/11 16:55:32 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 11:13:50 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ void		new_min_a(t_stacks *stack);
 void		apply_moves_min_a(t_stacks *stacks);
 void		new_max_a(t_stacks *stack);
 void		apply_moves_max_a(t_stacks *stacks);
+int			ft_find_index(t_stacks *stacks, int n);
 
 // Sort
 void		sort(t_stacks *stacks);
@@ -144,7 +145,7 @@ void		ft_push_b(t_stacks *stacks);
 
 // Return of the Jedi
 void		put_in_good_way(t_stacks *stacks);
-
+void		apply_moves_a(t_stacks *stacks);
 
 // Print
 void		print_error_and_exit(void);

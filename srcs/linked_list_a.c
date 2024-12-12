@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:48:42 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/11 16:54:33 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 10:41:45 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,27 +65,4 @@ int	ft_lstsize_a(t_stack_a *head_a)
 		head_a = head_a->next;
 	}
 	return (i);
-}
-
-void	new_content_a(t_stacks *stacks)
-{
-	int 		size;
-	int 		index;
-	t_stack_a 	*head_a;
-
-	head_a = stacks->head_a;
-	size = ft_lstsize_a(stacks);
-	index = 0;
-	stacks->moves->ra = 0;
-	stacks->moves->rra = 0;
-	while (stacks->head_b->content > head_a->content)
-	{
-		index++;
-		head_a = head_a->next;
-	}
-	if (index > size / 2)
-		stacks->moves->ra = index;
-	else
-		stacks->moves->rra = size - index;
-	apply_moves_new_a(stacks);	
 }

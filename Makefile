@@ -6,13 +6,13 @@
 #    By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/25 12:24:12 by lde-merc          #+#    #+#              #
-#    Updated: 2024/12/05 15:54:58 by lde-merc         ###   ########.fr        #
+#    Updated: 2024/12/12 11:04:23 by lde-merc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -g -Wall -Werror -Wextra
 LIBFT = libft/libft.a
 SRC_DIR = srcs
 OBJ_DIR = objs

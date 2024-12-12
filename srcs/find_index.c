@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_four.c                                        :+:      :+:    :+:   */
+/*   find_index.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/11 11:08:23 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 10:56:02 by lde-merc         ###   ########.fr       */
+/*   Created: 2024/12/12 10:17:40 by lde-merc          #+#    #+#             */
+/*   Updated: 2024/12/12 10:31:13 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_four(t_stacks *stacks)
+int			ft_find_index(t_stacks *stacks, int n)
 {
-	t_moves		*moves;
-	t_cheap		*cheap;
-	t_values	*values;
-
-	moves = calloc(1, sizeof(t_moves));
-	stacks->moves = moves;
-	cheap = ft_calloc(1, sizeof(t_cheap));
-	stacks->cheap = cheap;
-	values = calloc(1, sizeof(values));
-	stacks->values = values;
-	ft_push(stacks, 'b');
-	sort_three(stacks, 0);
-    move_back_to_a(stacks);
-	free_all(stacks);
-	exit(EXIT_FAILURE);
+    int         index;
+    t_stack_a   *head_a;
+    
+    index = 0;
+    head_a = stacks->head_a;
+    while(head_a->content != n)
+    {
+        index++;
+        head_a = head_a->next;
+    }
+    return (index);
 }
