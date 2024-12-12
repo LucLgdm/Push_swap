@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:57:37 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 15:09:20 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/12 17:48:47 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    ft_find_cheapest(t_stacks *stacks)
     stacks->cheap = cheap;
     values = ft_calloc(1, sizeof(t_values));
     stacks->values = values;
-    while (ft_lstsize_a(stacks->head_a != 3))
+    while (ft_lstsize_a(stacks->head_a) != 3)
     {
         update_min_max_a(stacks);
         find_moves(stacks);

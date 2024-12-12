@@ -1,0 +1,3 @@
+sort_four peut etre ameliore :
+    5 8 9 -6 renvoie : pb, rra, rra, rra, pa, ra, ra, ra
+            alors que pb, ra, ra, pa, ra suffit et meme ra tout seul !
