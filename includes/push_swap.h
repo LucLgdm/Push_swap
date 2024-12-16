@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 15:04:43 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/16 16:36:07 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,12 @@ void		apply_moves_new_a(t_stacks *stacks);
 
 // Linked list b
 void		ft_clearnode_b(t_stack_b **head_b);
+int			ft_lstsize_b(t_stack_b *head_b);
+void		new_content_b(t_stacks *stacks, int content);
 
 // Min and max a
 void		update_min_max_a(t_stacks *stacks);
+void		update_min_max_b(t_stacks *stacks);
 void		new_min_a(t_stacks *stack);
 void		apply_moves_min_a(t_stacks *stacks);
 void		new_max_a(t_stacks *stack);
@@ -151,12 +154,18 @@ void		apply_moves_a(t_stacks *stacks);
 void		ft_find_cheapest(t_stacks *stacks);
 void		find_moves(t_stacks *stacks);
 void		apply_cheap_moves(t_stacks *stacks);
+void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i);
+void		check_doppel_moves(t_stacks *stacks);
+void	    check_cost(t_stacks *stacks, int i);
 
 // Print
 void		print_error_and_exit(void);
 
 // Free
 void		free_all(t_stacks *stacks);
+
+
+void		printstacks(t_stacks *stacks);
 
 #endif
 

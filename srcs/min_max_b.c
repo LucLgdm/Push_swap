@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   min_max_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 14:00:44 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/16 17:41:58 by lde-merc         ###   ########.fr       */
+/*   Created: 2024/12/16 14:42:47 by lde-merc          #+#    #+#             */
+/*   Updated: 2024/12/16 14:43:58 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort(t_stacks *stacks)
+void		update_min_max_b(t_stacks *stacks)
 {
-	int	size_a;
-
-	size_a = ft_lstsize_a(stacks->head_a);
-	ft_printf("size a = %i\n", size_a);
-	if (is_sorted(stacks))
-		return ;
-	if (size_a == 2)
-		sort_two(stacks);
-	else if (size_a == 3)
-		sort_three(stacks, 1);
-	else if (size_a == 4)
-		sort_four(stacks);
-	printstacks(stacks);
-	ft_push(stacks, 'b');
-	ft_push(stacks, 'b');
-	ft_find_cheapest(stacks);
-	sort_three(stacks, 0);
-	move_back_to_a(stacks);
+    t_stack_b	*head_b;
+	
+	head_b = stacks->head_b;
+	stacks->values->min_b = stacks->head_b->content;
+	stacks->values->max_b = stacks->head_b->content;
+	while (head_b)
+	{
+		if (head_b->content < stacks->values->min_b)
+			stacks->values->min_b = head_b->content;
+		if (head_b->content > stacks->values->max_b)
+			stacks->values->max_b = head_b->content;
+		head_b = head_b->next;
+	}
 }
