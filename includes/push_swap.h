@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 02:07:36 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 03:18:56 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_values		t_values;
 struct s_moves
 {
 	int	cost;
-	int sa;
+	int	sa;
 	int	sb;
 	int	ss;
 	int	pa;
@@ -156,7 +156,7 @@ void		find_moves(t_stacks *stacks);
 void		apply_cheap_moves(t_stacks *stacks);
 void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i);
 void		check_doppel_moves(t_stacks *stacks);
-void	    check_cost(t_stacks *stacks, int i);
+void		check_cost(t_stacks *stacks, int i);
 void		new_num_in_stack_b(t_stacks *stacks, int num);
 int			find_index_stack_b(t_stacks *stacks, int nbr);
 int			search_num_stack_b(t_stacks *stacks, int nbr);
@@ -168,7 +168,6 @@ void		print_error_and_exit(void);
 
 // Free
 void		free_all(t_stacks *stacks);
-
 
 void		printstacks(t_stacks *stacks);
 
