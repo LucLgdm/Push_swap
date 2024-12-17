@@ -6,26 +6,41 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:36:27 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 02:44:14 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 05:37:37 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	error_input(int argc, char **argv)
+void	error_input(int argc, char **argv, int flag)
 {
+	int		i;
+	
 	if (argc == 1)
 		exit(EXIT_FAILURE);
-	check_integer(argc, argv);
-	check_int_size(argc, argv);
+	if (flag != 0)
+	{
+		i = 0;
+		while(argv[i])
+			i++;
+		check_integer(i, argv, flag);
+		check_int_size(i, argv, flag);
+	}
+	else
+	{
+		check_integer(argc, argv, flag);
+		check_int_size(argc, argv, flag);
+	}
 }
 
-void	check_int_size(int argc, char **argv)
+void	check_int_size(int argc, char **argv, int flag)
 {
 	int		i;
 	long	num;
 
 	i = 0;
+	if (flag != 0)
+		i--;
 	while (++i < argc)
 	{
 		num = ft_atol(argv[i]);
@@ -34,12 +49,14 @@ void	check_int_size(int argc, char **argv)
 	}
 }
 
-void	check_integer(int argc, char **argv)
+void	check_integer(int argc, char **argv, int flag)
 {
 	int	i;
 	int	j;
 
 	i = 0;
+	if (flag != 0)
+		i--;
 	while (++i < argc)
 	{
 		j = -1;

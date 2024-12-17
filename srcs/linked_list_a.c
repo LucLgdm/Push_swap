@@ -6,22 +6,24 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:48:42 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/12 10:41:45 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 05:39:28 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack_a	*create_stack_a(int argc, char **argv)
+t_stack_a	*create_stack_a(char **argv, int flag)
 {
 	t_stack_a	*head_a;
 	t_stack_a	*tmp;
 	int			i;
 
 	i = 1;
+	if (flag != 0)
+		i = 0;
 	head_a = ft_newnode_a(ft_atoi(argv[i]));
 	tmp = head_a;
-	while (++i < argc)
+	while (argv[++i])
 	{
 		tmp->next = ft_newnode_a(ft_atoi(argv[i]));
 		tmp = tmp->next;

@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 03:18:56 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 05:39:44 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,13 @@ struct	s_stacks
 typedef struct s_stacks		t_stacks;
 
 // Error handling
-void		error_input(int argc, char **argv);
-void		check_integer(int argc, char **argv);
-void		check_int_size(int argc, char **argv);
+void		error_input(int argc, char **argv, int flag);
+void		check_integer(int argc, char **argv, int flag);
+void		check_int_size(int argc, char **argv, int flag);
 void		doppel_check(t_stack_a *head_a);
 
 // Linked list a
-t_stack_a	*create_stack_a(int argc, char **argv);
+t_stack_a	*create_stack_a(char **argv, int flag);
 t_stack_a	*ft_newnode_a(int content);
 void		ft_clearnode_a(t_stack_a **head_a);
 int			ft_lstsize_a(t_stack_a *head_a);

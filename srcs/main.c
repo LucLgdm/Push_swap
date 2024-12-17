@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:19:07 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 02:41:21 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 05:39:37 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,16 @@
 int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
+	int			flag;
 
-	error_input(argc, argv);
-	stacks.head_a = create_stack_a(argc, argv);
+	flag = 0;
+	if (ft_strchr(argv[1], ' '))
+	{
+		argv = ft_split(argv[1], ' ');
+		flag = 1;
+	}
+	error_input(argc, argv, flag);
+	stacks.head_a = create_stack_a(argv, flag);
 	stacks.head_b = NULL;
 	doppel_check(stacks.head_a);
 	sort(&stacks);
