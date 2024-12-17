@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:12:01 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/11 11:00:31 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/16 20:03:22 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_rev_rotate(t_stacks *stacks, char c)
 		rev_rotate_b(stacks, 1);
 	else
 	{
+		head_a = stacks->head_a;
+		head_b = stacks->head_b;
 		if (head_a == NULL || head_a->next == NULL || head_b == NULL
 			|| head_b->next == NULL)
 			return ;

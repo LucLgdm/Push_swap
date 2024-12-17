@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build push_swap",
+            "type": "shell",
+            "command": "make", // Utilise make pour lancer ton Makefile
+            "args": [], // Arguments supplémentaires si nécessaire (ex: `all`, `debug`)
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

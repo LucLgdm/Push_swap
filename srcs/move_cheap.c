@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 17:45:06 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/16 15:37:44 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:04:28 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,25 @@ void	find_moves(t_stacks *stacks)
 	t_stack_a	*head_a;
 
     head_a = stacks->head_a;
-    i = -1;
+    i = 0;
     size = ft_lstsize_a(head_a);
-    while(++i < size)
+    while(i++ < size)
     {
-        get_top_stack_a(stacks, head_a, i);
-        if (head_a->content > stacks->values->max_b || \
+        get_top_stack_a(stacks, head_a, i - 1);
+        if (head_a->content > stacks->values->max_b ||
             head_a->content < stacks->values->min_b)
-            update_min_max_b(stacks);
+            new_max_or_min_stack_b(stacks);
         else
-            new_content_b(stacks, head_a->content);\
+            new_content_b(stacks, head_a->content);
         check_doppel_moves(stacks);
         check_cost(stacks, i);
         head_a = head_a->next;
     }
 }
+
 void    check_cost(t_stacks *stacks, int i)
 {
-    stacks->moves->cost = stacks->moves->pb + \
-    stacks->moves->ra + stacks->moves->rb + stacks->moves->rr + \
-    stacks->moves->rra + stacks->moves->rrb + stacks->moves->rrr;
+    stacks->moves->cost = stacks->moves->pb + stacks->moves->ra + stacks->moves->rb + stacks->moves->rr + stacks->moves->rra + stacks->moves->rrb + stacks->moves->rrr;
     if (i == 1 || stacks->cheap->cost > stacks->moves->cost)
     {
         stacks->cheap->cost = stacks->moves->cost;
@@ -73,26 +72,34 @@ void    check_doppel_moves(t_stacks *stacks)
 
 void		new_content_b(t_stacks *stacks, int content)
 {
-    t_stack_b   *head_b;
-    int         index;
-    int         size;
+    int	i;
+	int	size;
+	int	nbr;
 
-    size = ft_lstsize_b(stacks->head_b);
-    index = 0;
-    head_b = stacks->head_b;
-    stacks->moves->rb = 0;
-    stacks->moves->rrb = 0;
-    while (content > head_b->content)
-    {
-        index++;
-        head_b = head_b->next;
-    }
-    if (index > size / 2)
-        stacks->moves->rb = index;
-    else
-        stacks->moves->rrb = size - index;
+	stacks->moves->rb = 0;
+	stacks->moves->rrb = 0;
+	nbr = search_num_stack_b(stacks, content);
+	if (stacks->head_b->content == nbr)
+		return ;
+	i = find_index_stack_b(stacks, nbr);
+	size = ft_lstsize_b(stacks->head_b);
+	if (size % 2 == 0)
+	{
+		if (i + 1 > size / 2)
+			stacks->moves->rrb = (size - i);
+		else
+			stacks->moves->rb = i;
+	}
+	else
+	{
+		if (i > size / 2)
+			stacks->moves->rrb = (size - i);
+		else
+			stacks->moves->rb = i;
+	}
 }
 
+// count the cost to get to the stack b : top of stack a and pb
 void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
 {
     int size;
@@ -117,4 +124,79 @@ void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
         else
             stacks->moves->ra = i;
     }
+}
+
+void	new_num_in_stack_b(t_stacks *stacks, int num)
+{
+	int	i;
+	int	size;
+	int	nbr;
+
+	stacks->moves->rb = 0;
+	stacks->moves->rrb = 0;
+	nbr = search_num_stack_b(stacks, num);
+	if (stacks->head_b->content == nbr)
+		return ;
+	i = find_index_stack_b(stacks, nbr);
+	size = ft_lstsize_b(stacks->head_b);
+	if (size % 2 == 0)
+	{
+		if (i + 1 > size / 2)
+			stacks->moves->rrb = (size - i);
+		else
+			stacks->moves->rb = i;
+	}
+	else
+	{
+		if (i > size / 2)
+			stacks->moves->rrb = (size - i);
+		else
+			stacks->moves->rb = i;
+	}
+}
+
+
+int	find_index_stack_b(t_stacks *stacks, int nbr)
+{
+	t_stack_b	*head_b;
+	int			size;
+	int			i;
+
+	i = 0;
+	head_b = stacks->head_b;
+	size = ft_lstsize_b(stacks->head_b);
+	while (i < size)
+	{
+		if (head_b->content == nbr)
+			break ;
+		head_b = head_b->next;
+		i++;
+	}
+	return (i);
+}
+
+int	search_num_stack_b(t_stacks *stacks, int nbr)
+{
+	t_stack_b	*head_b;
+	int			size;
+	int			flag;
+	int			i;
+
+	i = 0;
+	flag = 0;
+	head_b = stacks->head_b;
+	size = ft_lstsize_b(stacks->head_b);
+	while (flag == 0)
+	{
+		i = 0;
+		nbr--;
+		head_b = stacks->head_b;
+		while (i++ < size)
+		{
+			if (head_b->content == nbr)
+				flag = 1;
+			head_b = head_b->next;
+		}
+	}
+	return (nbr);
 }

@@ -6,13 +6,13 @@
 #    By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/25 12:24:12 by lde-merc          #+#    #+#              #
-#    Updated: 2024/12/12 11:04:23 by lde-merc         ###   ########.fr        #
+#    Updated: 2024/12/16 22:34:04 by lde-merc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -g -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 LIBFT = libft/libft.a
 SRC_DIR = srcs
 OBJ_DIR = objs
@@ -23,12 +23,12 @@ INCLUDES = includes/
 all: makelibft $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
-		$(CC) $(OBJ) -Llibft -lft -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJ) -Llibft -lft -o $(NAME)
 		@echo "Creation of the executable $(NAME)"
 		
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
-	$(CC) -c $< -o $@ -I $(INCLUDES)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
 
 clean:
 	@rm -rf $(OBJ_DIR)

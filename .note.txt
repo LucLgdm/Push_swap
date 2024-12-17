@@ -1,0 +1,4 @@
+sort_four peut etre ameliore :
+    5 8 9 -6 renvoie : pb, rra, rra, rra, pa, ra, ra, ra
+            alors que pb, ra, ra, pa, ra suffit et meme ra tout seul !
+./push_swap $(shuf -i 1-10000 -n 100) | wc -l

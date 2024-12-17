@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:57:37 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/16 17:06:30 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 01:54:57 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,11 @@ void    ft_find_cheapest(t_stacks *stacks)
     stacks->cheap = cheap;
     values = ft_calloc(1, sizeof(t_values));
     stacks->values = values;
-    // ft_printf("size = %i\n", ft_lstsize_a(stacks->head_a));
     while (ft_lstsize_a(stacks->head_a) != 3)
     {
-        // printstacks(stacks);
-        
-        // ft_printf("Passage size\n");
-        update_min_max_a(stacks);
-        // ft_printf("updated min max a\n");
+        update_min_max_b(stacks);
         find_moves(stacks);
-        // ft_printf("Found moves\n");
         apply_cheap_moves(stacks);
-        printstacks(stacks);
-        // ft_printf("Applied cheap moves\n");
-        // ft_printf("\n");
     }
 }
 
