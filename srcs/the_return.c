@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:13:56 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 02:08:48 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:41:52 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,22 @@
 void	move_back_to_a(t_stacks *stacks)
 {
 	while (stacks->head_b != NULL)
-    {
-        update_min_max_a(stacks);
-        if (stacks->head_b->content < stacks->values->min_a) {
-            new_min_a(stacks);
-        }
-        else if (stacks->head_b->content > stacks->values->max_a)
-            new_max_a(stacks);
-        else
-            new_content_a(stacks, stacks->head_b);
-    }
-    update_min_max_a(stacks);
-    put_in_good_way(stacks);
+	{
+		update_min_max_a(stacks);
+		if (stacks->head_b->content < stacks->values->min_a)
+		{
+			new_min_a(stacks);
+		}
+		else if (stacks->head_b->content > stacks->values->max_a)
+			new_max_a(stacks);
+		else
+			new_content_a(stacks, stacks->head_b);
+	}
+	update_min_max_a(stacks);
+	put_in_good_way(stacks);
 }
 
-void	new_content_a(t_stacks *stacks, t_stack_b * head_b)
+void	new_content_a(t_stacks *stacks, t_stack_b *head_b)
 {
 	int	i;
 	int	size;
@@ -58,44 +59,43 @@ void	new_content_a(t_stacks *stacks, t_stack_b * head_b)
 	apply_moves_a(stacks);
 }
 
-void    apply_moves_a(t_stacks *stacks)
+void	apply_moves_a(t_stacks *stacks)
 {
-    while (stacks->moves->ra-- != 0)
-        ft_rotate(stacks, 'a');
-    while (stacks->moves->rra-- != 0)
-        ft_rev_rotate(stacks, 'a');
-    ft_push(stacks, 'a');
+	while (stacks->moves->ra-- != 0)
+		ft_rotate(stacks, 'a');
+	while (stacks->moves->rra-- != 0)
+		ft_rev_rotate(stacks, 'a');
+	ft_push(stacks, 'a');
 }
 
 void	put_in_good_way(t_stacks *stacks)
 {
-    int index;
-    int size;
-    
-    stacks->moves->ra = 0;
+	int	index;
+	int	size;
+
+	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
 	if (stacks->head_a->content != stacks->values->min_a)
 	{
-        index = ft_find_index(stacks, stacks->values->min_a);
-        size = ft_lstsize_a(stacks->head_a);
-        if (size % 2 == 0)
-        {
-            if (index > size / 2)
-                stacks->moves->ra = index;
-            else
-                stacks->moves->rra = size - index;
-        }
-        else
-        {
-            if (index > size /2)
-                stacks->moves->ra = index;
-            else
-                stacks->moves->rra = size - index;
-        }
-    }
-    apply_moves_a(stacks);
+		index = ft_find_index(stacks, stacks->values->min_a);
+		size = ft_lstsize_a(stacks->head_a);
+		if (size % 2 == 0)
+		{
+			if (index > size / 2)
+				stacks->moves->ra = index;
+			else
+				stacks->moves->rra = size - index;
+		}
+		else
+		{
+			if (index > size / 2)
+				stacks->moves->ra = index;
+			else
+				stacks->moves->rra = size - index;
+		}
+	}
+	apply_moves_a(stacks);
 }
-
 
 int	search_stack_a(t_stacks *stacks, int nbr)
 {

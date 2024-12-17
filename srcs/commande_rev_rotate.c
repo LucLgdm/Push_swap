@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:12:01 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/16 20:03:22 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:43:10 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	rev_rotate_a(t_stacks *stacks, int n)
 	if (n != 0)
 		ft_printf("rra\n");
 }
+
 void	rev_rotate_b(t_stacks *stacks, int n)
 {
 	t_stack_b	*tmp_head_b;

@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:23:46 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/10 14:53:38 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:41:55 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_two(t_stacks *stacks)
 {
-		ft_swap(stacks, 'a');
-		ft_clearnode_a(&stacks->head_a);
-		exit(0);
+	ft_swap(stacks, 'a');
+	ft_clearnode_a(&stacks->head_a);
+	exit(0);
 }

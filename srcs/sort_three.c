@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 15:12:56 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/11 09:54:28 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:41:57 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sort_three(t_stacks *stacks, int flag)
 	}
 }
 
-void		work_number_three(t_stacks *stacks, int num1, int num2, int num3)
+void	work_number_three(t_stacks *stacks, int num1, int num2, int num3)
 {
 	if (num1 > num2 && num1 < num3 && num2 < num3)
 		ft_swap(stacks, 'a');

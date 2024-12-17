@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 14:42:47 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 02:03:21 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:43:31 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	update_min_max_b(t_stacks *stacks)
 {
-    t_stack_b	*head_b;
-	
+	t_stack_b	*head_b;
+
 	head_b = stacks->head_b;
 	stacks->values->min_b = stacks->head_b->content;
 	stacks->values->max_b = stacks->head_b->content;
@@ -28,6 +28,7 @@ void	update_min_max_b(t_stacks *stacks)
 		head_b = head_b->next;
 	}
 }
+
 void	new_max_or_min_stack_b(t_stacks *stacks)
 {
 	int	i;

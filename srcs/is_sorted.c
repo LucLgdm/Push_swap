@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:03:24 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/10 15:04:59 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:42:14 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ bool	is_sorted(t_stacks *stacks)
 
 	if (!stacks || !stacks->head_a)
 		return (true);
-
 	cur = stacks->head_a;
 	while (cur->next)
 	{

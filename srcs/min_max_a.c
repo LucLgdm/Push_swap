@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:34:06 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 01:57:16 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:44:27 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	update_min_max_a(t_stacks *stacks)
 {
 	t_stack_a	*head_a;
-	
+
 	head_a = stacks->head_a;
 	stacks->values->min_a = stacks->head_a->content;
 	stacks->values->max_a = stacks->head_a->content;
@@ -58,11 +58,12 @@ void	new_min_a(t_stacks *stacks)
 	}
 	apply_moves_min_a(stacks);
 }
+
 /*The function put the new maximum element at the right position in stack a*/
 void	new_max_a(t_stacks *stacks)
 {
-	int size;
-	int index;
+	int	size;
+	int	index;
 
 	stacks->moves->ra = 0;
 	stacks->moves->rra = 0;
@@ -88,21 +89,21 @@ void	new_max_a(t_stacks *stacks)
 	apply_moves_max_a(stacks);
 }
 
-void    apply_moves_min_a(t_stacks *stacks)
+void	apply_moves_min_a(t_stacks *stacks)
 {
-    while(stacks->moves->ra-- != 0)
+	while (stacks->moves->ra-- != 0)
 		ft_rotate(stacks, 'a');
-    while(stacks->moves->rra-- != 0)
+	while (stacks->moves->rra-- != 0)
 		ft_rev_rotate(stacks, 'a');
-    ft_push(stacks, 'a');
+	ft_push(stacks, 'a');
 }
 
-void    apply_moves_max_a(t_stacks *stacks)
+void	apply_moves_max_a(t_stacks *stacks)
 {
-    while(stacks->moves->ra-- != 0)
-        ft_rotate(stacks, 'a');
-    while(stacks->moves->rra-- != 0)
-        ft_rotate(stacks, 'a');
-    ft_push(stacks, 'a');
-    ft_rotate(stacks, 'a');
+	while (stacks->moves->ra-- != 0)
+		ft_rotate(stacks, 'a');
+	while (stacks->moves->rra-- != 0)
+		ft_rotate(stacks, 'a');
+	ft_push(stacks, 'a');
+	ft_rotate(stacks, 'a');
 }

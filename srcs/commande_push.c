@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 14:12:21 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/16 20:17:09 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/17 02:42:35 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	ft_push(t_stacks *stacks, char c)
 			ft_first_push_b(stacks);
 		else
 			ft_push_b(stacks);
-		// printstacks(stacks);
-		// ft_printf("\n");
 	}
 }
 
@@ -62,7 +60,7 @@ void	ft_push_a(t_stacks *stacks)
 void	ft_first_push_b(t_stacks *stacks)
 {
 	t_stack_b	*tmp;
-	
+
 	tmp = (t_stack_b *)stacks->head_a;
 	stacks->head_a = stacks->head_a->next;
 	stacks->head_b = tmp;
