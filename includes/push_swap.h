@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/18 11:03:40 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/18 16:27:36 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,6 @@ void		apply_cheap_moves(t_stacks *stacks);
 void		get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i);
 void		check_doppel_moves(t_stacks *stacks);
 void		check_cost(t_stacks *stacks, int i);
-void		new_num_in_stack_b(t_stacks *stacks, int num);
 int			find_index_stack_b(t_stacks *stacks, int nbr);
 int			search_num_stack_b(t_stacks *stacks, int nbr);
 void		new_max_or_min_stack_b(t_stacks *stacks);

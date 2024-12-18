@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 17:45:06 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 03:18:11 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/18 17:17:26 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,26 +100,16 @@ void	get_top_stack_a(t_stacks *stacks, t_stack_a *head_a, int i)
 
 int	search_num_stack_b(t_stacks *stacks, int nbr)
 {
-	t_stack_b	*head_b;
-	int			size;
-	int			flag;
-	int			i;
+	t_stack_b	*current;
+	int			closest;
 
-	i = 0;
-	flag = 0;
-	head_b = stacks->head_b;
-	size = ft_lstsize_b(stacks->head_b);
-	while (flag == 0)
+	current = stacks->head_b;
+	closest = INTMIN;
+	while (current)
 	{
-		i = 0;
-		nbr--;
-		head_b = stacks->head_b;
-		while (i++ < size)
-		{
-			if (head_b->content == nbr)
-				flag = 1;
-			head_b = head_b->next;
-		}
+		if (current->content <= nbr && current->content > closest)
+			closest = current->content;
+		current = current->next;
 	}
-	return (nbr);
+	return (closest);
 }
