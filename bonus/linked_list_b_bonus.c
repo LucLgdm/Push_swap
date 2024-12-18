@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   linked_list_b.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 10:19:07 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/18 14:19:01 by lde-merc         ###   ########.fr       */
+/*   Created: 2024/12/10 13:10:34 by lde-merc          #+#    #+#             */
+/*   Updated: 2024/12/18 10:53:10 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_clearnode_b(t_stack_b **head_b)
 {
-	t_stacks	stacks;
-	int			flag;
+	t_stack_b	*tmp;
 
-	if (argc == 1)
-		print_error_and_exit();
-	flag = 0;
-	if (ft_strchr(argv[1], ' '))
+	while (*head_b != NULL)
 	{
-		argv = ft_split(argv[1], ' ');
-		flag = 1;
+		tmp = *head_b;
+		*head_b = tmp->next;
+		free(tmp);
 	}
-	error_input(argc, argv, flag);
-	stacks.head_a = create_stack_a(argv, flag);
-	stacks.head_b = NULL;
-	doppel_check(stacks.head_a);
-	sort(&stacks);
-	free_all(&stacks);
-	return (0);
+}
+
+int	ft_lstsize_b(t_stack_b *head_b)
+{
+	int	size;
+
+	size = 0;
+	while (head_b != NULL)
+	{
+		size++;
+		head_b = head_b->next;
+	}
+	return (size);
 }

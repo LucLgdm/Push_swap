@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 05:39:44 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/18 11:03:40 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,8 +168,6 @@ void		print_error_and_exit(void);
 
 // Free
 void		free_all(t_stacks *stacks);
-
-void		printstacks(t_stacks *stacks);
 
 #endif
 
