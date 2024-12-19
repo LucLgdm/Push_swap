@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:12:55 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/18 16:27:36 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/19 13:17:35 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void		ft_clearnode_a(t_stack_a **head_a);
 int			ft_lstsize_a(t_stack_a *head_a);
 void		new_content_a(t_stacks *stacks, t_stack_b *head_b);
 void		apply_moves_new_a(t_stacks *stacks);
+t_stack_a	*ft_lstlast_a(t_stack_a *head_a);
 
 // Linked list b
 void		ft_clearnode_b(t_stack_b **head_b);

@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 10:48:05 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/18 14:36:15 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/19 12:00:53 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 	int			flag;
 
 	if (argc == 1)
-		print_error_and_exit();
+		exit(EXIT_FAILURE);
 	flag = 0;
 	if (ft_strchr(argv[1], ' '))
 	{

@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 10:36:27 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/18 14:37:40 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/19 11:58:48 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,7 @@ void	check_integer(int argc, char **argv, int flag)
 			{
 				if (j == 0 && ft_strlen(argv[i]) != 1 && (argv[i][j] == '-'
 					|| argv[i][j] == '+'))
-				{
-					j++;
 					continue ;
-				}
 				print_error_and_exit();
 			}
 		}

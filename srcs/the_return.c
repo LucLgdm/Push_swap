@@ -6,7 +6,7 @@
 /*   By: lde-merc <lde-merc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:13:56 by lde-merc          #+#    #+#             */
-/*   Updated: 2024/12/17 02:41:52 by lde-merc         ###   ########.fr       */
+/*   Updated: 2024/12/19 13:23:33 by lde-merc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	move_back_to_a(t_stacks *stacks)
 	{
 		update_min_max_a(stacks);
 		if (stacks->head_b->content < stacks->values->min_a)
-		{
 			new_min_a(stacks);
-		}
 		else if (stacks->head_b->content > stacks->values->max_a)
 			new_max_a(stacks);
 		else
